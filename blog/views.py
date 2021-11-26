@@ -9,7 +9,7 @@ from django.views.generic import ListView
 def post_list(request):
     object_list = Post.published.all()
     page = request.GET.get('page')
-    paginator = Paginator(object_list, 3)
+    paginator = Paginator(object_list, 5)
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:
