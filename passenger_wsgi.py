@@ -1,0 +1,1 @@
+from dj_blog.wsgi import application

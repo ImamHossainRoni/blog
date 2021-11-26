@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container text-center">
+			    <h2 class="heading">প্রযুক্তির খেঁয়া </h2>
+			    <div class="intro">abstract thoughts &#128512;</div>
+
+		    </div><!--//container-->
+	    </section>
+	    <section class="blog-list px-3 py-5 p-md-5">
+		    <div class="container">
+                {% for post in posts %}
+			    <div class="item mb-5">
+				    <div class="media">
+					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ post.image.url }}" alt="image">
+					    <div class="media-body">
+						    <h3 class="title mb-1"><a href="{% url 'post_details' post.id %}">{{ post.title }}</a></h3>
+						    <div class="meta mb-1"><span class="date">{{ post.created }}</span><span class="time">5 min read</span><span class="comment"><a href="#">8 comments</a></span></div>
+						    <div class="intro">{{ post.body|safe|truncatechars:200 }}</div>
+
+					    </div>
+				    </div>
+			    </div>
+                {% endfor %}
+
+
+
+			   <!--  <nav class="blog-nav nav nav-justified my-5">
+				  <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+				  <a class="nav-link-next nav-item nav-link rounded" href="#">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav> -->
+
+				<nav class="blog-nav nav nav-justified my-5" aria-label="Page navigation example">
+			    	<ul class="pagination">
+			    		<li class="page-item">
+			    			<a class="page-link" href="#" aria-label="Previous">
+			    				<span aria-hidden="true">&laquo;</span>
+			    				<span class="sr-only">Previous</span>
+			    			</a>
+			    		</li>
+			    		<li class="page-item"><a class="page-link" href="#">1</a></li>
+			    		<li class="page-item"><a class="page-link" href="#">2</a></li>
+			    		<li class="page-item"><a class="page-link" href="#">3</a></li>
+			    		<li class="page-item">
+			    			<a class="page-link" href="#" aria-label="Next">
+			    				<span aria-hidden="true">&raquo;</span>
+			    				<span class="sr-only">Next</span>
+			    			</a>
+			    		</li>
+			    	</ul>
+			    </nav>
+
+		    </div>
+	    </section>
+
+	    <footer class="footer text-center py-2 theme-bg-dark">
+
+	        <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+
+	    </footer>
+
+    </div><!--//main-wrapper-->
+{% endblock %}
