@@ -13,56 +13,74 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- FontAwesome JS-->
-	<script defer src="{% static 'assets/fontawesome/js/all.min.js' %}"></script>
+    <script defer src="{% static 'assets/fontawesome/js/all.min.js' %}"></script>
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="{% static 'assets/css/theme-6.css' %}">
     <link id="theme-style" rel="stylesheet" href="{% static 'assets/plugins/highlight/styles/github-gist.css' %}">
 
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+
+        /* I want to use this font in my footer to add some icons. */
+        @font-face{
+            font-family: 'FontAwesome';
+            src: url('https://stackpath.bootstrapcdn.com/fonts/fontawesome-webfont.eot?v=4.7.0');
+            font-weight:normal;
+            font-style:normal
+        }
+    </style>
 </head>
 <body>
 {% block sidebar %}
-<header class="header text-center">
-	    <h1 class="blog-name pt-lg-4 mb-0"><a href="#"></a></h1>
+    <header class="header text-center">
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="#"></a></h1>
 
-	    <nav class="navbar navbar-expand-lg navbar-dark" >
+        <nav class="navbar navbar-expand-lg navbar-dark" >
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-			</button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-			<div id="navigation" class="collapse navbar-collapse flex-column" >
-				<div class="profile-section pt-3 pt-lg-0">
-				    <img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'assets/images/imam.png' %}" alt="image" >
+            <div id="navigation" class="collapse navbar-collapse flex-column" >
+                <div class="profile-section pt-3 pt-lg-0">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'assets/images/imam.png' %}" alt="image" >
 
-					<div class="bio mb-3">Hi, I'm Imam Hossain Roni</div>
-					<ul class="social-list list-inline py-3 mx-auto">
-			            <li class="list-inline-item"><a href="https://twitter.com/imamhossainron3?lang=en"><i class="fab fa-twitter fa-fw"></i></a></li>
-			            <li class="list-inline-item"><a href="https://www.linkedin.com/in/imam-hossain-roni-4748b3137/"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
-			            <li class="list-inline-item"><a href="https://github.com/ImamHossainRoni"><i class="fab fa-github-alt fa-fw"></i></a></li>
-			            <li class="list-inline-item"><a href="https://stackoverflow.com/users/6342245/md-imam-hossain-roni"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-			            <li class="list-inline-item"><a href="https://www.facebook.com/roni7imam/"><i class="fab fa-facebook fa-fw"></i></a></li>
-			        </ul>
-			        <hr>
-				</div>
-
-
-
-				<!-- <ul class="navbar-nav flex-column text-left">
-					<li class="nav-item active">
-					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-					    <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
-					</li>
-					<li class="nav-item">
-					    <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
-					</li>
-				</ul> -->
+                    <div class="bio mb-3">Hi, I'm Imam Hossain Roni</div>
+                    <ul class="social-list list-inline py-3 mx-auto">
+                        <li class="list-inline-item"><a href="https://twitter.com/imamhossainron3?lang=en"><i class="fab fa-twitter fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/imam-hossain-roni-4748b3137/"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/ImamHossainRoni"><i class="fab fa-github-alt fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://stackoverflow.com/users/6342245/md-imam-hossain-roni"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.facebook.com/roni7imam/"><i class="fab fa-facebook fa-fw"></i></a></li>
+                    </ul>
+                    <hr>
+                </div>
 
 
-			</div>
-		</nav>
+
+                <!-- <ul class="navbar-nav flex-column text-left">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+                    </li>
+                </ul> -->
+
+
+            </div>
+        </nav>
     </header>
 {% endblock %}
 {% block content %}
@@ -72,7 +90,7 @@
 
 
 {% block script %}
-        <!-- Javascript -->
+    <!-- Javascript -->
     <script src="{% static 'assets/plugins/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'assets/plugins/popper.min.js' %}"></script>
     <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
@@ -83,8 +101,8 @@
     <script src="//cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
 
 
-{#        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>#}
-       <script src="{% static 'assets/js/blog.js' %}"></script>
+    {#        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>#}
+    <script src="{% static 'assets/js/blog.js' %}"></script>
 
 
     <!-- Custom JS -->
