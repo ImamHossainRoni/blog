@@ -16,7 +16,8 @@ def post_list(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
-    return render(request, 'list.html', {'posts': posts})
+    total_published_post = object_list.count()
+    return render(request, 'list.html', {'posts': posts, 'total_published_post': total_published_post})
 
 
 def post_details(request, pk):
