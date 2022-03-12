@@ -20,6 +20,6 @@ def post_list(request):
     return render(request, 'list.html', {'posts': posts, 'total_published_post': total_published_post})
 
 
-def post_details(request, pk):
-    post = get_object_or_404(Post, id=pk)
+def post_details(request, slug):
+    post = get_object_or_404(Post, slug=slug)
     return render(request, 'details.html', {'post': post})
