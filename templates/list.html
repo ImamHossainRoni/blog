@@ -6,7 +6,7 @@
 	    <section class="cta-section theme-bg-light py-5">
 		    <div class="container text-center">
 			    <h2 class="heading"><a href="/">প্রযুক্তির খেঁয়া</a> </h2>
-			    <div class="intro">abstract thoughts &#128512;</div>
+			    <div class="intro">abstract thoughts 🤔</div>
 
 		    </div><!--//container-->
 	    </section>
@@ -18,7 +18,7 @@
 					    <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{ post.image.url }}" alt="image">
 					    <div class="media-body">
 						    <h3 class="title mb-1"><a href="{% url 'post_details' post.id %}">{{ post.title }}</a></h3>
-						    <div class="meta mb-1"><span class="date">{{ post.created }}</span><span class="time">5 min read</span><span class="comment"></span></div>
+						    <div class="meta mb-1"><span class="date">{{ post.created }}</span></div>
 						    <div class="intro">{{ post.body|safe|truncatechars:200 }}</div>
 
 					    </div>
